@@ -15,8 +15,15 @@ void ClampExample()
     cout << clamp(x, 12, 7) << endl;
 }
 
+void WrapExample()
+{
+    int x = 8;
+    // 3 출력
+    cout << wrap(x, 0, 5) << endl;
+}
 
 int main()
 {
-    ClampExample();
+    //ClampExample();
+    WrapExample();
 }
