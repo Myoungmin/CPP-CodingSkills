@@ -22,8 +22,19 @@ void WrapExample()
     cout << wrap(x, 0, 5) << endl;
 }
 
+void JudgementExample()
+{
+    // Win : 0 출력
+    cout << judgement(Rock, Scissors) << endl;
+    // Lose : 1 출력
+    cout << judgement(Rock, Paper) << endl;
+    // Draw : 2 출력
+    cout << judgement(Rock, Rock) << endl;
+}
+
 int main()
 {
     //ClampExample();
-    WrapExample();
+    //WrapExample();
+    JudgementExample();
 }
