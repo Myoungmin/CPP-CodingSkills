@@ -23,5 +23,8 @@
     <ClInclude Include="ControlFlow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Functionalization.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

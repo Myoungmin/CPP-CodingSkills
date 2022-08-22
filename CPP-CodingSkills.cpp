@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include "ControlFlow.h"
+#include "Functionalization.h"
 using namespace std;
 
 void ClampExample()
@@ -32,9 +33,18 @@ void JudgementExample()
     cout << judgement(Rock, Rock) << endl;
 }
 
+void WeekToNameAndNameToWeekExample()
+{
+    // "Sat" 출력
+    cout << to_String(Week::Saturday) << endl;
+    // "Sun" 출력, enum class로 변경했다가 다시 문자열로 변경
+    cout << to_String(to_week("Sun")) << endl;
+}
+
 int main()
 {
     //ClampExample();
     //WrapExample();
-    JudgementExample();
+    //JudgementExample();
+    WeekToNameAndNameToWeekExample();
 }
