@@ -54,3 +54,67 @@ Result judgement(Hand my, Hand target)
 	};
 	return result[my][target];
 }
+
+
+/****************************************************************************************************************/
+
+/* 조건식이 직접적으로 관련된 부분을 국소화하는 과정에 대한 단계별 변화 */
+
+bool isDash()
+{
+	return true;
+}
+
+float position;
+float direction;
+
+const float SPEED_DASH = 10.0f;
+const float SPEED_Normal = 5.0f;
+
+//////////////////////////////////////////////////
+
+/* 변경 전 */
+void Before() {
+	if (isDash) {	// 대시 중인지 확인
+		position += direction * 10.0f;	// 대시 중에는 속도가 2배
+	}
+	else {
+		position += direction * 5.0f;
+	}
+}
+
+//////////////////////////////////////////////////
+
+/* 속도 변화 부분만 따로 빼서 국소화 */
+void Step1() {
+	float speed = 5.0f;
+	if (isDash()) {	// 대시 중인지 확인
+		speed = 10.0f;	// 대시 중에는 속도가 2배
+	}
+	position += direction * speed;
+}
+
+/* speed 연산 부분 함수화 */
+float speed() {
+	//// if문 사용
+	//if (isDash()) return 10.0f;
+	//return 5.0f;
+
+	//// 삼항 연산자 사용
+	//return isDash() ? 10.0f : 5.0f;
+
+	// 삼항 연산자와 매직 넘버 사용
+	return isDash() ? SPEED_DASH : SPEED_Normal;
+}
+
+
+//////////////////////////////////////////////////
+
+/* if 조건문을 없애고 중복된 계산식이 없어진 결과 */
+void Result() {
+	position += direction * speed();
+}
+
+//////////////////////////////////////////////////
+
+/****************************************************************************************************************/
