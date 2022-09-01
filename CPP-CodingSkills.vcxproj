@@ -145,6 +145,7 @@
     <ClInclude Include="BindingClass.h" />
     <ClInclude Include="ControlFlow.h" />
     <ClInclude Include="Functionalization.h" />
+    <ClInclude Include="SplitSearchLoop.h" />
     <ClInclude Include="Observer.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="Strategy.h" />
